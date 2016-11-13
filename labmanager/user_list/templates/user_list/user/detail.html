@@ -1,0 +1,18 @@
+{% extends "user_list/base.html" %}
+
+{% block title %}   {{user.name}}'s details  {% endblock %}
+
+{% block content %}
+    <h1> User </h1>
+    <h3>
+        {{user.name}}
+        <br>
+        PI: {{user.supervisor}} ; position: {{user.user_rank}} ; joined on: {{ user.join_date}}
+        </h3>
+<body>
+    <p> {{user.name}} is a good '{{user.user_rank}}'</p>
+
+{% load static %}
+</body>
+
+{% endblock %}
