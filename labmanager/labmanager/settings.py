@@ -16,6 +16,17 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
+SETTINGS_DIR = os.path.dirname(__file__)
+PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
+PROJECT_PATH = os.path.abspath(PROJECT_PATH)
+
+
+TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
+STATIC_PATH = os.path.join(PROJECT_PATH,'static')
+
+
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -71,13 +82,16 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'labmanager.urls'
 
+user_listPath=os.path.join(PROJECT_PATH, 'user_list').replace('\\', '/'),
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': {
             'user_list',
             os.path.join(PROJECT_ROOT, 'templates').replace('\\', '/'),
-
+            TEMPLATE_PATH,
+            user_listPath,
         },
         'APP_DIRS': True,
         'OPTIONS': {
@@ -142,24 +156,29 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
 STATICFILES_DIRS = (
   os.path.join(PROJECT_ROOT, 'static/'),
     '/Users/avibraun/Dropbox/Django/LabManager_project/labmanager/static/',
+  STATIC_PATH,
+  os.path.join(STATIC_PATH, 'css'),
+  os.path.join(PROJECT_PATH, 'user_list/static/css'),
 )
 
 
 # from data_base_sql_setting import *
 
-from  .non_git_files_2 import *
+# from  .non_git_files_2 import *
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-#         'NAME': 'labmanager_db',                      # Or path to database file if using sqlite3.
-#         'USER': 'root',                      # Not used with sqlite3.
-#         'PASSWORD': 'mysql9br',                  # Not used with sqlite3.
-#         'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
-#         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'labmanager_db',                      # Or path to database file if using sqlite3.
+        'USER': 'root',                      # Not used with sqlite3.
+        'PASSWORD': 'mysql9br',                  # Not used with sqlite3.
+        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
+}
 

@@ -1,10 +1,12 @@
+<!DOCTYPE html>
+
+
 {% load static %}
 
-<!--<!DOCTYPE html>-->
 <html>
 <head>
 	<title> Index </title>
-	<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'mystyle.css' %}">
 <!--<style type="text/css">-->
 
 	<!--body {-->
@@ -20,7 +22,9 @@
 
 <body>
 	<h1>	The XXX lab is my lab</h1>
-	<img src=" { % static "labmanager/logo.jpg" %}" alt="logo" title="my lab" />
+	        <a href="/users	">About</a>
+	<img src=" { % static "labmanager\\logo.jpg" %}" alt="logo" title="my lab" />
+	<img src="{% static "logo.jpg" %}" alt="Picture of Rango" />
 	<!--<a href="{{ STATIC_URL }}labmanage/images/lab manager_title.jpg" / alt ="fsdfsdf">-->
 
 </body>
