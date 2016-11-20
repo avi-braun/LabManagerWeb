@@ -5,27 +5,35 @@
 
 <html>
 <head>
-	<title> Index </title>
+	<title> MyLabHomePage </title>
 	<link rel="stylesheet" type="text/css" href="{% static 'mystyle.css' %}">
-<!--<style type="text/css">-->
-
-	<!--body {-->
-		<!--font-family:Aria, Veranda, sans-serif;}-->
-	<!--h1 {-->
-		<!--color: rgb(255,60,150);}-->
-<!--</style>-->
-
 </head>
 
-
-	<h2>	The XXX lab is my lab</h2>
-
 <body>
-	<h1>	The XXX lab is my lab</h1>
-	        <a href="/users	">About</a>
-	<img src=" { % static "labmanager\\logo.jpg" %}" alt="logo" title="my lab" />
-	<img src="{% static "logo.jpg" %}" alt="Picture of Rango" />
-	<!--<a href="{{ STATIC_URL }}labmanage/images/lab manager_title.jpg" / alt ="fsdfsdf">-->
+	<!--<img src="{% static "logoS.jpg" %}" alt="logo"  />-->
+<div id="page">
+	<div class="boxh">
+		<div class="headerBox">
+			<h1> <strong>M</strong>y<b>L</b>ab<b>M</b>anager</h1>
+			<h3> Ultrafast laser laboratory (Location:XXXX)</h3>
+			<h4 id="simpleText"> Manager:YYY (email) &thinsp; | &thinsp; PI:XXX (email)   </h4>
+		</div>
+	</div>
+	<br>
+
+	<ul id="navigation">
+		<li><a href="#" class="on">Home</a></li>
+		<li><a href="/users"> Users </a></li>
+		<li><a href="#"> Equipment </a></li>
+		<li><a href="#"> Techniques </a></li>
+	</ul>
+
+
+	<p>
+		Our lab is specialized in: XXX; we have good equipment, nice people, and good atmoshpere,
+
+	</p>
+</div>
 
 </body>
 

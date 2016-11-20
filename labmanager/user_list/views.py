@@ -12,7 +12,7 @@ from django.core.mail import send_mail
 
 def users_list(request):
     object_list = User.active.all()
-    paginator=Paginator(object_list,2)
+    paginator=Paginator(object_list,18)
     page=request.GET.get('page')
     try:
         users=paginator.page(page)
@@ -21,7 +21,7 @@ def users_list(request):
     except EmptyPage:
         users=paginator.page(paginator.num_pages)
     return render(request,
-                  'user_list/user/list.html',
+                  'user_list/list.html',
                   {'page':page,
                    'users': users})
 
@@ -29,7 +29,7 @@ def users_list(request):
 def user_details(request, username):
     user = get_object_or_404(User, name=username)
     return render(request,
-                  'user_list/user/detail.html',
+                  'user_list/detail.html',
                   {'user': user})
 
 

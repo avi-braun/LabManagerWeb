@@ -1,0 +1,41 @@
+
+{% load static %}
+
+<head>
+	<title> Users </title>
+	<link rel="stylesheet" type="text/css" href="{% static 'mystyle.css' %}">
+</head>
+
+<body>
+    <h2 id="category_title"> XXX list of lab users </h2>
+    <table>
+        <tr>
+            <th> Name </th>
+            <th> PI </th>
+            <th> Position </th>
+            <th> email </th>
+            <th class="date"> Joining on  </th>
+        </tr>
+
+    {% for user in users %}
+        <tr>
+            <td> <a href="{{User.get_absolute_url}}{{user.name}}"> {{user.name}}</a>  </td>
+            <td> {{user.supervisor}} </td>
+            <td> {{user.user_rank}} </td>
+            <td class="email"> <a href="mailto:{{user.email}}"> {{user.email}}</a>  </td>
+            <td class="date"> {{user.join_date}} </td>
+        </tr>
+    {% endfor %}
+
+    </table>
+    <br>
+    <br>
+    <!--{% for user in users %}-->
+        <!--<h5>-->
+            <!--<a href="{{ User.get_absolute_url }}{{user.name}}">{{user.name}} </a>-->
+              <!--PI: {{user.supervisor}} position: {{user.user_rank}} joined on: {{ user.join_date}}-->
+        <!--</h5>-->
+    <!--{% endfor %}-->
+
+    {% include "user_list/pagination.html" with page=users %}
+</body>
