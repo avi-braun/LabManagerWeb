@@ -2,17 +2,12 @@
 {% load static %}
 
 <head>
-	<title> Users </title>
+	<title> Add Lab User </title>
 	<link rel="stylesheet" type="text/css" href="{% static 'mystyle.css' %}">
 </head>
 
 <body>
     <h2 id="category_title"> XXX list of lab users </h2>
-    <!--doesnt work:-->
-    <!--{% with users.count as total_users %}-->
-    <!--<h2> {{total_users}} users {{total_users|pluralize}}</h2>-->
-    <!--{% endwith %}-->
-
     <table>
         <tr>
             <th> Name </th>
@@ -35,23 +30,10 @@
     </table>
     <br>
     <br>
-    <!--{% if new_user%}-->
-    <!--<h2> a new user has been added </h2>-->
-    <!--{%else%}-->
-    <!--<a id=click href="#">Add new user</a>-->
-<div id="formBox" >
-    <h3></h3> <b><u> Add New User:</u></b> </h2>
-    <form action="." method="post">
-        {{adduser_form.as_p}}
-        {%csrf_token%}
-        <p> <input type="submit" value="Add User"></p>
-    </form>
-        {% if success %}
-        <p> New user added </p>
-        {% endif%}
-    {% endif%}
-</div>
 
+    <a id=click href="#">Add new user</a>
+    <br>
+    <br>
     <!--{% for user in users %}-->
         <!--<h5>-->
             <!--<a href="{{ User.get_absolute_url }}{{user.name}}">{{user.name}} </a>-->
@@ -60,5 +42,4 @@
     <!--{% endfor %}-->
 
     {% include "user_list/pagination.html" with page=users %}
-
 </body>

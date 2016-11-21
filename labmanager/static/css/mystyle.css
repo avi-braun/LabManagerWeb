@@ -136,3 +136,24 @@ text-align: right;}
     position: relative;
     left: 20px;
 }
+
+#click {
+    text-align: left;
+    position: relative;
+    letter-spacing:0.05em;
+    left: 10px;
+    background-color:white;
+   color: darkblue ;
+    border:2px solid darkblue;
+}
+
+#formBox {
+    width: 30%;
+    text-align: left;
+    border:2px solid darkblue;
+    background-color:lightgray;
+    padding: 10px;
+
+   /* border: 2px solid black;*/
+
+}
